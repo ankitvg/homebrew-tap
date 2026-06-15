@@ -1,25 +1,25 @@
 class Madari < Formula
   desc "CLI tool to install, sync and manage local MCP servers"
   homepage "https://github.com/ankitvg/madari"
-  version "0.1.2"
+  version "0.2.1"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-darwin-arm64.tar.gz"
-      sha256 "c355f99b1db1fcce53b3dd0e4a703f0ea8eef000b9e6dcbc53aa57a92e32d0ca"
+      sha256 "801cd28eb37624512288cfdacff79f0674983825022dfdbafa0a252d147739a7"
     else
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-darwin-amd64.tar.gz"
-      sha256 "94e4146780c2fc41437f94c9225fcca0411d19a0e95f16616c1e063ff5161969"
+      sha256 "243c7aca97cd0028aaf27e1523b846e04ec04cd5a4c11a414f88bbf5b01753c6"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-linux-arm64.tar.gz"
-      sha256 "fcd9fd3b9858d34115b3bf55b9b3dc62b88230daddccd1cec521c1140ff8836a"
+      sha256 "bf8fc6ac44fe2fffeef8f5121271b75414165db4f70189ba23d3d29c46c7d12a"
     else
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-linux-amd64.tar.gz"
-      sha256 "34ee61bfb9def0ff8f670b5009cb65406543cb93e0f9636d438e2ab396ec4f91"
+      sha256 "04e0f19d8bea237cc53116f6e96dd2bc3e12f8faa2333617d9582e2b0fabb4b6"
     end
   end
 
@@ -30,6 +30,6 @@ class Madari < Formula
   end
 
   test do
-    assert_match "Usage:", shell_output("#{bin}/madari --help")
+    assert_match "madari - local MCP manager", shell_output("#{bin}/madari --help")
   end
 end
