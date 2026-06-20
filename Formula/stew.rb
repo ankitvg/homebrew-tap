@@ -1,18 +1,35 @@
 class Stew < Formula
   desc "CLI for append-only markdown project memory ledgers"
   homepage "https://github.com/ankitvg/stew"
-  url "https://github.com/ankitvg/stew/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "874a4f02a1334740221b0722f9b59da9ae792e33d5a931791d28652c1bea51b9"
+  version "0.1.1"
   license "Apache-2.0"
 
-  depends_on "go" => :build
+  on_macos do
+    on_arm do
+      url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_darwin_arm64.tar.gz"
+      sha256 "5ee63baba6c35edd08cd783781b3bc4ea525722ae5c1a705bc98190fcd309fc1"
+    end
+
+    on_intel do
+      url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_darwin_amd64.tar.gz"
+      sha256 "bb601b7a06f980773333371d6821bf3ae01bb244bf9be450eee0741efe550928"
+    end
+  end
+
+  on_linux do
+    on_arm do
+      url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_linux_arm64.tar.gz"
+      sha256 "f28c429e882918371586c4d768c861e0907d72a518bdba9ec5ff9b5067438295"
+    end
+
+    on_intel do
+      url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_linux_amd64.tar.gz"
+      sha256 "66fdb0884adf605064ad134aa37b6b3ebc9cc62c3160c73191f2b116b272b6d3"
+    end
+  end
 
   def install
-    ldflags = %W[
-      -s -w
-      -X github.com/ankitvg/stew/internal/version.Version=v#{version}
-    ]
-    system "go", "build", "-trimpath", "-ldflags", ldflags.join(" "), "-o", bin/"stew", "./cmd/stew"
+    bin.install "stew"
   end
 
   test do
