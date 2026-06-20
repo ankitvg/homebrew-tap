@@ -1,30 +1,30 @@
 class Stew < Formula
   desc "CLI for append-only markdown project memory ledgers"
   homepage "https://github.com/ankitvg/stew"
-  version "0.1.2"
+  version "0.1.3"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_darwin_arm64.tar.gz"
-      sha256 "42924807b280e36a630071406422624d743e677c49adc6a678f2baaf18fdd262"
+      sha256 "8e521f965166ad6cd263bc04b395737862d60f99474ad3b8357b5abf88b39205"
     end
 
     on_intel do
       url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_darwin_amd64.tar.gz"
-      sha256 "563e28e75d96c4846c74bd7e0de21970888d73abd5fc04dd97c91b846a14c0ea"
+      sha256 "8493ae7b2bd1710ccab74618310c046c33d34362473c6908e53b3353541038b4"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_linux_arm64.tar.gz"
-      sha256 "6db69a87bb4f32d486f5185b38d205e8c98a02b7df23f3a98949ae17ee57c865"
+      sha256 "11ee52a278a9930381795a59ba621b1bbe8a1746f830e4836fb72cfaac50f576"
     end
 
     on_intel do
       url "https://github.com/ankitvg/stew/releases/download/v#{version}/stew_v#{version}_linux_amd64.tar.gz"
-      sha256 "d11973fac5ef3ed93f1c73f98dadb56b128c7681c5605b41b0f372a73602054d"
+      sha256 "fc147578b300843391307b019904f052324d6fdca61d5b2ab658ec4cce50dc78"
     end
   end
 
