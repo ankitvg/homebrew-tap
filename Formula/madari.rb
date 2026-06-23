@@ -1,25 +1,25 @@
 class Madari < Formula
   desc "CLI tool to install, sync and manage local MCP servers"
   homepage "https://github.com/ankitvg/madari"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-darwin-arm64.tar.gz"
-      sha256 "801cd28eb37624512288cfdacff79f0674983825022dfdbafa0a252d147739a7"
+      sha256 "1895c4cc9d30bb35f898ff365a21b6de8a8c6bf7d6dcb49724d70242b45fdcdf"
     else
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-darwin-amd64.tar.gz"
-      sha256 "243c7aca97cd0028aaf27e1523b846e04ec04cd5a4c11a414f88bbf5b01753c6"
+      sha256 "9fad0604e634528a9f6406fa68eca36e464cbedb9d9a7a4a6db120872cec8e88"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-linux-arm64.tar.gz"
-      sha256 "bf8fc6ac44fe2fffeef8f5121271b75414165db4f70189ba23d3d29c46c7d12a"
+      sha256 "d852ba033d1c6c5ac2ffd290f88ab8a173ec9d31b64dfd1a0e668f846cb1d8ab"
     else
       url "https://github.com/ankitvg/madari/releases/download/v#{version}/madari-linux-amd64.tar.gz"
-      sha256 "04e0f19d8bea237cc53116f6e96dd2bc3e12f8faa2333617d9582e2b0fabb4b6"
+      sha256 "c1718b2ef28ab9778e8f718af09baa538b56ba339bca3741b4362e1359c10122"
     end
   end
 
